@@ -1,3 +1,12 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h3.user-name {
+  text-align: center;
+}
+
+section.user-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

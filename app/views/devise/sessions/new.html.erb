@@ -6,6 +6,8 @@
     <%= f.text_field :name, autocomplete: "name" %>
   </div>
 
+  <%= f.hidden_field :password, :value => 'password', autocomplete: "password" %>
+
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>

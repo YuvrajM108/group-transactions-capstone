@@ -7,11 +7,12 @@
     <tr>
       <th>Name</th>
       <th colspan="3"></th>
+      <th>Hours</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
+    <% current_user.projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
         <td><%= link_to 'Show', project %></td>

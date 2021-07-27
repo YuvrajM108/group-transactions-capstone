@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :authentication_keys => [:name]
   validates :name, presence: true, uniqueness: true
 
+  has_many :projects
+
   before_validation do
     self.password = 'password'
     self.password_confirmation = 'password'

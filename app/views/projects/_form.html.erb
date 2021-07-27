@@ -16,6 +16,13 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :hours %>
+    <%= form.number_field :hours, min: 1 %>
+  </div>
+  
+  <%= form.number_field :user_id, :value => current_user.id, type: :hidden %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
