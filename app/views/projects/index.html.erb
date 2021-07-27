@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% current_user.projects.each do |project| %>
+    <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
         <td><%= link_to 'Show', project %></td>

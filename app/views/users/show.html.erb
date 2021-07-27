@@ -1,5 +1,6 @@
 <h3 class="user-name"><%= current_user.name %></h3>
 <section class="user-options">
-<%= link_to "All my Projects", projects_path %>
+<%= link_to "All My Projects", projects_path %>
+<%= link_to "All My External Projects", projects_path(:group_id=>[nil, ""]) %>
 <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 </section>
