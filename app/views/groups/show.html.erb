@@ -9,6 +9,20 @@
   <strong>Icon:</strong>
   <%= image_tag("#{@group.icon_url}", :class => "icon") %>
 </p>
+<table>
+  <thead>
+    <tr>
+      <th>Project Name</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+<% @group.projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.author.name %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
