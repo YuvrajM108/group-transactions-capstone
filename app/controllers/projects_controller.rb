@@ -4,8 +4,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    if params[:group_id]
-      @projects = current_user.projects.where(:group_id => params[:group_id])
+    if params[:group]
+      @projects = current_user.projects.without_groups
     else
       @projects = current_user.projects
     end

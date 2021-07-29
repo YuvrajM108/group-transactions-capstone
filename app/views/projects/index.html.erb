@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Projects</h1>
-
+<strong>Total Hours:</strong>
+<%= @projects.sum(:hours) %>
 <table>
   <thead>
     <tr>
+      <th>First Icon</th>
       <th>Name</th>
-      <th colspan="3"></th>
       <th>Hours</th>
+      <th>Created On</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
+    <% @projects.order('created_at DESC').each do |project| %>
       <tr>
+        <% i_src = project.groups.first_icon_url[0] %>
+        <% unless (i_src.blank?) %>
+        <td><%= image_tag("#{i_src}", alt: "First group icon", :class => "icon") %></td>
+        <% else %>
+        <td></td>
+        <% end %>
         <td><%= project.name %></td>
+        <td><%= project.hours %></td>
+        <td><%= project.created_at.to_date %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
