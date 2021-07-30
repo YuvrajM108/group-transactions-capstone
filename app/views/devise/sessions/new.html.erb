@@ -1,5 +1,11 @@
-<h2>Log in</h2>
-
+<nav class="objects-header">
+<h2>Log In</h2>
+</nav>
+<div class="container">
+<div class="row">
+<div class="col-3">
+</div>
+<section class="object-menu col-6">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
@@ -19,5 +25,10 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+</section>
+<div class="col-3">
+</div>
+</div>
+</div>
+

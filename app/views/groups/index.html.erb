@@ -8,6 +8,11 @@
 <div class="col-3">
 </div>
 <section class="object-menu col-6">
+<% unless user_signed_in? %>
+<div class="d-flex flex-row justify-content-center">
+<h5><%= link_to 'Log In', user_session_path, class: "big-link-dark" %></h5>
+</div>
+<% end %>
     <% @groups.each do |group| %>
       <div class="single-object">
       <div class="image-title">

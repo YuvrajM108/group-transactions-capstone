@@ -54,6 +54,16 @@ a.big-link:hover {
   background: none;
 }
 
+a.big-link-dark {
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+a.big-link-dark:hover {
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+  background: none;
+}
+
 .add-button {
   display: flex;
   align-items: center;
