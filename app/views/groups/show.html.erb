@@ -1,28 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Icon:</strong>
-  <%= image_tag("#{@group.icon_url}", :class => "icon") %>
-</p>
+<nav class="objects-header">
+<h1 class="page-title"><%= @group.name %></h1>
+</nav>
+<div class="container">
+<div class="row">
+<div class="col-3">
+</div>
+<section class="object-menu col-6">
 <table>
-  <thead>
     <tr>
-      <th>Project Name</th>
-      <th>Author</th>
+      <th><h5>Project</h5></th>
+      <th><h5>Author</h5></th>
     </tr>
-  </thead>
 <% @group.projects.each do |project| %>
   <tr>
-    <td><%= project.name %></td>
-    <td><%= project.author.name %></td>
+    <td><h6><%= project.name %></h6></td>
+    <td><h6><%= project.author.name %></h6></td>
   </tr>
 <% end %>
 </table>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div class="add-border">
+  <div class="add-button">
+    <h5><%= link_to 'Add New Project to Group', new_grouped_project_path, class: "big-link" %></h5>
+  </div>
+</div>
+</section>
+</div>
+</div>

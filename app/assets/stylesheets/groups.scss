@@ -11,3 +11,14 @@ img.single-icon {
   width: 15%;
   height: 100%;
 }
+
+a.group-show-link {
+  color: black;
+  text-decoration: none;
+}
+
+a.group-show-link:hover {
+  text-decoration: underline;
+  background: none;
+  color: black;
+}

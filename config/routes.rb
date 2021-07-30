@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   devise_for :users# , :controllers => { registrations: 'registrations' }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root "groups#index"
+  authenticated do
+    root :to => "users#show", as: :authenticated
+  end
+  
+  root :to => "groups#index"
 end

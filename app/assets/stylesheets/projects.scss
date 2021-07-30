@@ -2,19 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.single-project {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: white;
-}
-
-.image-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
 .name-date {
   display: flex;
   flex-direction: column;
@@ -27,13 +14,10 @@
   justify-content: flex-end;
 }
 
-header.projects-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10%;
-  background-color: #3778c2;
-}
-
 h1.page-title {
   color: white;
+}
+
+p.hour-count {
+  font-size: 15px;
 }

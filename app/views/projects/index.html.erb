@@ -1,37 +1,39 @@
 <p id="notice"><%= notice %></p>
-<header class="projects-header">
+<nav class="objects-header">
 <h1 class="page-title">PROJECTS</h1>
-</header>
+</nav>
 <div class="container">
 <div class="row">
 <div class="col-3">
 </div>
-<section class="project-menu col-6">
+<section class="object-menu col-6">
   <div class="sum-hours d-flex flex-row justify-content-between">
     <strong><h5>Total Hours:</h5></strong>
     <strong><h5><%= @projects.sum(:hours) %></h5></strong>
   </div>
     <% @projects.order('created_at DESC').each do |project| %>
-      <div class="single-project">
+      <div class="single-object">
         <div class="image-title">
         <% i_src = project.groups.first_icon_url[0] %>
         <% unless (i_src.blank?) %>
         <%= image_tag("#{i_src}", alt: "First group icon", :class => "single-icon") %>
         <% else %>
-        <%= image_tag("default-icon.png", alt: "Default icon", :class => "single-icon") %>
+        <%= image_tag("https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg", 
+        alt: "Default icon", :class => "single-icon") %>
         <% end %>
         <div class="name-date">
         <h5><%= project.name %></h5>
         <p><%= project.created_at.to_date %></p>
         </div>
         </div>
-        <h5><%= project.hours %></h5>
-        <!-- <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <p class="hour-count"><%= project.hours %> hour(s)</p>
       </div>
     <% end %>
-    <%= link_to 'Add New Project', new_project_path %>
+    <div class="add-border">
+    <div class="add-button">
+      <h5><%= link_to 'Add New Project', new_project_path, class: "big-link" %></h5>
+    </div>
+    </div>
 </section>
 <div class="col-3">
 </div>

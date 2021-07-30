@@ -1,12 +1,19 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+nav.user-name {
+  margin-bottom: 5%;
+  background-color: #3778c2;
+}
+
 h3.user-name {
   text-align: center;
+  color: #f1f3f2;
 }
 
 section.user-options {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #3778c2;
 }

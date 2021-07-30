@@ -1,29 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
-<%= link_to 'Home', user_path(current_user.id)%>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<nav class="objects-header">
+<h1 class="page-title">GROUPS</h1>
+</nav>
+<div class="container">
+<div class="row">
+<div class="col-3">
+</div>
+<section class="object-menu col-6">
     <% @groups.each do |group| %>
-      <tr>
-        <td><%= link_to(group.name, group) %></td>
-        <td><%= image_tag("#{group.icon_url}", alt: "#{group.name} icon", :class => "icon") %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="single-object">
+      <div class="image-title">
+        <%= image_tag("#{group.icon_url}", alt: "#{group.name} icon", :class => "single-icon") %>
+        <h5><%= link_to(group.name, group, class: "group-show-link") %></h5>
+      </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+    <div class="add-border">
+    <div class="add-button">
+    <h5><%= link_to 'Add New Group', new_group_path, class: "big-link" %></h5>
+    </div>
+    </div>
+</section>
+<div class="col-3">
+</div>
+</div>
+</div>
