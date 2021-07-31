@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 <nav class="objects-header">
-<h1 class="page-title">PROJECTS</h1>
+<img class="home-hamburger-icon" src="https://www.coupa.com/sites/default/files/exec-connects/Hamburger_icon_white.png" alt="Home icon">
+<h1 class="page-title">MY PROJECTS</h1>
+<div>
+</div>
 </nav>
 <div class="container">
 <div class="row">
@@ -26,7 +29,7 @@
         <p><%= project.created_at.to_date %></p>
         </div>
         </div>
-        <p class="hour-count"><%= project.hours %> hour(s)</p>
+        <p class="hour-count"><%= project.hours %>H</p>
       </div>
     <% end %>
     <div class="add-border">
