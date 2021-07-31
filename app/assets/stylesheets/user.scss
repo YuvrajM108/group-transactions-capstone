@@ -4,6 +4,8 @@
 nav.user-name {
   margin-bottom: 5%;
   background-color: #3778c2;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 h3.user-name {
@@ -16,4 +18,19 @@ section.user-options {
   flex-direction: column;
   align-items: center;
   background-color: #3778c2;
+}
+
+img.hamburger-menu-user,
+.option-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.menu-option {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bordered-option {
+  border-bottom: 1px solid #cbcccc;
 }

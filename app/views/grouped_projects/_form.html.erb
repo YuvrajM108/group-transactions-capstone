@@ -1,0 +1,19 @@
+<%= form_with(model: grouped_project) do |form| %>
+  <% if grouped_project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grouped_project.errors.count, "error") %> prohibited this grouped_project from being saved:</h2>
+
+      <ul>
+        <% grouped_project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= select(:grouped_project, :group_id, @groups, selected => params[:g_id]) %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
