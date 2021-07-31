@@ -11,9 +11,8 @@ class GroupedProjectsController < ApplicationController
 
   # GET /grouped_projects/new
   def new
-    @selected_grp = Group.find(params[g_id])
-    @groups = Group.all
-    @projects = current_user.projects.includes(:groups).where.not(groups: { id: params[g_id] }).or(current_user.projects.without_groups)
+    @selected_grp = Group.find(params[:g_id])
+    @projects = current_user.projects.includes(:groups).where.not(groups: { id: params[:g_id] }).or(current_user.projects.without_groups)
     @grouped_project = GroupedProject.new
   end
 
@@ -26,8 +25,8 @@ class GroupedProjectsController < ApplicationController
 
     respond_to do |format|
       if @grouped_project.save
-        format.html { redirect_to @grouped_project, notice: 'Grouped project was successfully created.' }
-        format.json { render :show, status: :created, location: @grouped_project }
+        format.html { redirect_to Group.find(@grouped_project.group_id), notice: 'Grouped project was successfully created.' }
+        format.json { render :show, status: :created, location: Group.find(@grouped_project.group_id) }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @grouped_project.errors, status: :unprocessable_entity }
@@ -66,6 +65,6 @@ class GroupedProjectsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def grouped_project_params
-    params.fetch(:grouped_project, {})
+    params.require(:grouped_project).permit(:project_id, :group_id)
   end
 end
