@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
   validates :name, presence: true, uniqueness: true
+  validates :icon_url, presence: true, url: true
   has_many :grouped_projects
   has_many :projects, through: :grouped_projects
 
