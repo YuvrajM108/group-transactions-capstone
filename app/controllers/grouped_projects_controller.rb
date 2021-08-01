@@ -25,7 +25,9 @@ class GroupedProjectsController < ApplicationController
 
     respond_to do |format|
       if @grouped_project.save
-        format.html { redirect_to Group.find(@grouped_project.group_id), notice: 'Grouped project was successfully created.' }
+        format.html do
+          redirect_to Group.find(@grouped_project.group_id), notice: 'Grouped project was successfully created.'
+        end
         format.json { render :show, status: :created, location: Group.find(@grouped_project.group_id) }
       else
         format.html { render :new, status: :unprocessable_entity }
