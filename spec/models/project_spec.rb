@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'devise'
 
 Rspec.describe Project, type: :model do
   before(:each) do
