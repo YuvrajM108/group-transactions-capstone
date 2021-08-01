@@ -1,0 +1,33 @@
+<%= form_with(model: grouped_project) do |form| %>
+  <% if grouped_project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grouped_project.errors.count, "error") %> prohibited this grouped_project from being saved:</h2>
+
+      <ul>
+        <% grouped_project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= form.label :project %>
+  <select name="grouped_project[project_id]">
+    <% @projects.each do |project| %>
+      <option value="<%= project.id %>"><%= project.name %></option>
+    <% end %>
+  </select>
+  </div>
+
+  <div class="field">
+  <%= form.label :group %>
+  <select name="grouped_project[group_id]">
+    <option value="<%= @selected_grp.id %>" selected="selected"><%= @selected_grp.name %></option>
+  </select>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

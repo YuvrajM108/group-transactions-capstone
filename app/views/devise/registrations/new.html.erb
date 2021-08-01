@@ -1,0 +1,28 @@
+<nav class="objects-header">
+<h2>Sign Up</h2>
+</nav>
+<div class="container">
+<div class="row">
+<div class="col-3">
+</div>
+<section class="object-menu col-6">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autocomplete: "name" %>
+  </div>
+  
+  <%= f.hidden_field :password, :value => 'password', autocomplete: "password" %>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
+</section>
+<div class="col-3">
+</div>
+</div>
+</div>

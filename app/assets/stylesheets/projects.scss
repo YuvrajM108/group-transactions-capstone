@@ -1,0 +1,23 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5px;
+}
+
+.sum-hours {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1.page-title {
+  color: white;
+}
+
+p.hour-count {
+  font-size: 15px;
+}

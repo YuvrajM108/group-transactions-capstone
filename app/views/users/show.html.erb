@@ -1,0 +1,25 @@
+<body class="user-page">
+<nav class="user-name">
+<div></div>
+<h3 class="user-name"><%= current_user.name %></h3>
+<img class="hamburger-menu-user" src="https://www.coupa.com/sites/default/files/exec-connects/Hamburger_icon_white.png" alt="Hamburger menu icon">
+</nav>
+<section class="user-options">
+<div class="menu-option bordered-option">
+<img class="option-icon" src="https://icons555.com/images/icons-gray/image_icon_layers_pic_512x512.png" alt="option icon">
+<h5><%= link_to "All My Projects", projects_path, class: "big-link" %></h5>
+</div>
+<div class="menu-option bordered-option">
+<img class="option-icon" src="https://www.iconsdb.com/icons/download/dark-gray/layers-512.png" alt="option icon">
+<h5><%= link_to "All My External Projects", projects_path(:group=>[nil, ""]), class: "big-link" %></h5>
+</div>
+<div class="menu-option bordered-option">
+<img class="option-icon" src="https://www.iconsdb.com/icons/preview/dark-gray/folder-xxl.png" alt="option icon">
+<h5><%= link_to "All Groups", groups_path, class: "big-link" %></h5>
+</div>
+<div class="menu-option">
+<img class="option-icon" src="https://www.iconsdb.com/icons/download/dark-gray/logout-512.png" alt="option icon">
+<h5><%= link_to "Log Out", destroy_user_session_path, method: :get, class: "big-link" %></h5>
+</div>
+</section>
+</body>

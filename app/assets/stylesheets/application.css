@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #f1f3f2;
+}
+
+body.user-page {
+  background-color: #3778c2;
+}
+
+nav.objects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+  background-color: #3778c2;
+}
+
+.image-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.single-object {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  margin-top: 5px;
+}
+
+a.big-link {
+  color: #f1f3f2;
+  text-decoration: none;
+}
+
+a.big-link:hover {
+  text-shadow: 0 0 5px #fff;
+  background: none;
+}
+
+a.big-link-dark {
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+a.big-link-dark:hover {
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+  background: none;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  padding: 5px;
+}
+
+.add-border {
+  margin-top: 5px;
+  background-color: #5fb523;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+table {
+  display: table;
+  border-spacing: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.home-hamburger-icon {
+  width: 40px;
+  height: 40px;
+}
+
+a.hamburger-icon:hover {
+  background: none;
+  box-shadow: 5px 5px 5px #fff;
+}

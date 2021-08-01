@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<nav class="objects-header">
+<%= link_to root_path, class: "hamburger-icon" do%>
+  <img class="home-hamburger-icon" src="https://www.coupa.com/sites/default/files/exec-connects/Hamburger_icon_white.png" alt="Home icon">
+<% end %>
+<h1 class="page-title">GROUPS</h1>
+<div>
+</div>
+</nav>
+<div class="container">
+<div class="row">
+<div class="col-3">
+</div>
+<section class="object-menu col-6">
+<% unless user_signed_in? %>
+<div class="d-flex flex-row justify-content-center">
+<h5><%= link_to 'Log In', user_session_path, class: "big-link-dark" %></h5>
+</div>
+<% end %>
+    <% @groups.each do |group| %>
+      <div class="single-object">
+      <div class="image-title">
+        <%= image_tag("#{group.icon_url}", alt: "#{group.name} icon", :class => "single-icon") %>
+        <h5><%= link_to(group.name, group, class: "group-show-link") %></h5>
+      </div>
+      </div>
+    <% end %>
+    <div class="add-border">
+    <div class="add-button">
+    <h5><%= link_to 'Add New Group', new_group_path, class: "big-link" %></h5>
+    </div>
+    </div>
+</section>
+<div class="col-3">
+</div>
+</div>
+</div>
