@@ -1,5 +1,6 @@
 {
   "name": "group-transactions-capstone",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
