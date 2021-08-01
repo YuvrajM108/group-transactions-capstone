@@ -11,5 +11,11 @@ RSpec.describe Project, type: :model do
       project = user.projects.build
       expect(project.valid?).to be(false)
     end
+
+    it 'passes when name is filled' do
+      user = User.find_by(name: 'user1')
+      project = user.projects.build(name: 'Project1')
+      expect(project.valid?).to be(true)
+    end
   end
 end

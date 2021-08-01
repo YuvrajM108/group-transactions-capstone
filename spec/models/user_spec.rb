@@ -6,6 +6,11 @@ RSpec.describe User, type: :model do
       user = User.new
       expect(user.valid?).to be(false)
     end
+
+    it 'is valid when there is a name' do
+      user = User.new(name: 'user1')
+      expect(user.valid?).to be(true)
+    end
   end
 
   def create_project(nme, hrs, user)

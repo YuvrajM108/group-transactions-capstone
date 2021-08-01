@@ -6,6 +6,12 @@ RSpec.describe Group, type: :model do
       group = Group.new(name: 'group1', icon_url: 'qwerty')
       expect(group.valid?).to be(false)
     end
+
+    it 'is valid when valid icon url is provided' do
+      group = Group.new(name: 'group1',
+                        icon_url: 'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png')
+      expect(group.valid?).to be(true)
+    end
   end
 
   def create_project(nme, hrs, user, grp)
