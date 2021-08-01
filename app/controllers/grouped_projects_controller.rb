@@ -12,7 +12,8 @@ class GroupedProjectsController < ApplicationController
   # GET /grouped_projects/new
   def new
     @selected_grp = Group.find(params[:g_id])
-    @projects = current_user.projects.includes(:groups).where.not(groups: { id: params[:g_id] }).or(current_user.projects.without_groups)
+    @projects = current_user.projects.includes(:groups).where.not(groups:
+    { id: params[:g_id] }).or(current_user.projects.without_groups)
     @grouped_project = GroupedProject.new
   end
 
