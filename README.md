@@ -10,7 +10,7 @@ In this project I built a simple Rails app according to these [requirements](htt
 
 ## Live Demo
 
-To see a live demo of the project, please click the following [link]
+To see a live demo of the project, please click the following [link](https://desolate-ravine-80526.herokuapp.com/)
 
 ## Built With
 
