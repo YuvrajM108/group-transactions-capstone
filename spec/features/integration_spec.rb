@@ -44,8 +44,8 @@ RSpec.describe 'Feature test' do
   describe 'log out process', type: :feature do
     it 'successfully logs out' do
       login_process
-      click_link 'Sign out'
-      expect(page).to have_content 'You need to sign in or sign up before continuing.'
+      click_link 'logout'
+      expect(page).to have_content 'Signed out successfully.'
     end
   end
 
