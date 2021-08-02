@@ -2,11 +2,11 @@
 
 In this project I built a simple Rails app according to these [requirements](https://www.notion.so/Group-our-transactions-ccea2b6642664540a70de9f30bdff4ce). This app allows users to create projects for a university, create groups, and assign projects to groups.
 
-![Sign In Form](docs\sign-in-form-screenshot.PNG)
-![Home Page](docs\logged-in-home-screenshot.PNG)
-![Projects Index](docs\projects-index-screenshot.PNG)
-![Groups Index](docs\groups-index-screenshot.PNG)
-![Group Show](docs\group-show-screenshot.PNG)
+![Sign In Form](docs/sign-in-form-screenshot.PNG)
+![Home Page](docs/logged-in-home-screenshot.PNG)
+![Projects Index](docs/projects-index-screenshot.PNG)
+![Groups Index](docs/groups-index-screenshot.PNG)
+![Group Show](docs/group-show-screenshot.PNG)
 
 ## Live Demo
 
