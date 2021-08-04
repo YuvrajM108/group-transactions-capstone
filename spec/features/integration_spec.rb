@@ -7,18 +7,14 @@ RSpec.describe 'Feature test' do
 
   def login_process
     visit 'users/sign_in'
-    within('#new_user') do
-      fill_in 'Name', with: 'user1'
-    end
+    fill_in 'name', with: 'user1'
     click_button 'Log in'
   end
 
   describe 'Sign up process', type: :feature do
     it ' Signs up a user' do
       visit 'users/sign_up'
-      within('#new_user') do
-        fill_in 'Name', with: 'johndoe'
-      end
+      fill_in 'name', with: 'johndoe'
       click_button 'Sign up'
       expect(page).to have_content 'Welcome! You have signed up successfully.'
     end
@@ -39,38 +35,36 @@ RSpec.describe 'Feature test' do
 
     it 'fails to log in with empty fields' do
       visit 'users/sign_in'
-      within('#new_user') do
-        fill_in 'Name', with: ''
-      end
+      fill_in 'name', with: ''
       click_button 'Log in'
-      expect(page).to have_content 'Invalid Email or password.'
+      expect(page).to have_content 'Invalid Name or password.'
     end
   end
 
   describe 'log out process', type: :feature do
     it 'successfully logs out' do
       login_process
-      click_link 'Sign out'
-      expect(page).to have_content 'You need to sign in or sign up before continuing.'
+      click_link 'logout'
+      expect(page).to have_content 'Signed out successfully.'
     end
   end
 
   describe 'create project', type: :feature do
     it 'does not create a project when name is blank' do
       login_process
-      within('#new_project') do
-        fill_in 'name', with: ''
-        click_button 'Submit'
-      end
-      expect(page).to have_content "Post could not be saved. Content can't be blank"
+      visit 'projects/new'
+      fill_in 'name', with: ''
+      fill_in 'hours', with: '2'
+      click_button 'Submit'
+      expect(page).to have_content "Name can't be blank"
     end
     it 'creates a project when name is not blank' do
       login_process
-      within('#new_project') do
-        fill_in 'name', with: 'project1'
-        click_button 'Submit'
-      end
-      expect(page).to have_content 'Post was successfully created.'
+      visit 'projects/new'
+      fill_in 'name', with: 'project1'
+      fill_in 'hours', with: '2'
+      click_button 'Submit'
+      expect(page).to have_content 'Project was successfully created.'
     end
   end
 end

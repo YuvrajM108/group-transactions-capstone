@@ -11,10 +11,10 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autocomplete: "name" %>
+    <%= f.text_field :name, id: 'name', autocomplete: "name" %>
   </div>
   
-  <%= f.hidden_field :password, :value => 'password', autocomplete: "password" %>
+  <%= f.hidden_field :password, :value => 'password', id: 'password', autocomplete: "password" %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
