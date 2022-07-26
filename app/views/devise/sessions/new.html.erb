@@ -8,7 +8,7 @@
 <section class="object-menu col-6">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <p>In this demo you may Log In with the username johndoe</p>
+    <p>In this demo you may Log In with the username johndoe or create your own account</p>
     <%= f.label :name %><br />
     <%= f.text_field :name, :value => 'johndoe', id: 'name', autocomplete: "name" %>
   </div>
